@@ -1,3 +1,5 @@
+const paths = require('./wb.paths.js');
+
 /*
  * Colors values that are converted to CSS custom properties.
  * Accepts any CSS color value as a string, or an object of color shades.
@@ -108,7 +110,17 @@ const tailwind = {
     translate: ['responsive', 'hover', 'focus', 'animated'],
   },
   purge: {
-    enabled: false,
+    content: [
+      `${paths.components.src}**/*.vue`,
+      `${paths.wb.src}**/*.vue`,
+      `${paths.wb.src}**/*.ts`,
+      `${paths.wb.src}**/*.js`,
+      `${paths.wb.src}**/*.jsx`,
+      `${paths.wb.src}**/*.html`,
+      `${paths.wb.src}**/*.pug`,
+      `${paths.wb.src}**/*.md`,
+      `./index.html`,
+    ],
   },
 };
 
